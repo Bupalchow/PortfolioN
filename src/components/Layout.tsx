@@ -52,16 +52,16 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* Center container with white/dark background */}
       <div className="w-full max-w-6xl bg-white dark:bg-[#111111] text-gray-900 dark:text-white transition-colors duration-200">
         {/* Regular header with logo and theme toggle */}
-        <header className="backdrop-blur-sm transition-all duration-300">
+        <header className="backdrop-blur-sm transition-all duration-300 relative">
           <nav className="px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex items-center justify-between">
               {/* Profile image */}
               <div className="flex-shrink-0">
                 <img 
-                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=50&h=50&fit=crop&crop=faces"
+                  src="/Logo.png"
                   alt="Profile"
                   onClick={() => navigate('/')}
-                  className="w-10 h-10 rounded-full cursor-pointer"
+                  className="w-16 h-16 rounded-full cursor-pointer mt-3 ml-4"
                 />
               </div>
 
@@ -72,8 +72,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </div>
               </div>
 
-              {/* Mobile menu button */}
-              <div className="sm:hidden">
+              {/* Mobile menu button - positioned with z-index to ensure modal can overlay everything */}
+              <div className="sm:hidden z-10 relative">
                 <Navigation headerOnly={true} mobileOnly={true} />
               </div>
 
