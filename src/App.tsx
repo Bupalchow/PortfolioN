@@ -4,7 +4,6 @@ import Layout from './components/Layout';
 import About from './pages/About';
 import Blogs from './pages/Blogs';
 import Projects from './pages/Projects';
-import Speaking from './pages/Speaking';
 import Uses from './pages/Uses';
 import Hero from './components/Hero'
 
@@ -18,7 +17,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/speaking" element={<Speaking />} />
             <Route path="/uses" element={<Uses />} />
           </Routes>
         </Layout>

@@ -34,7 +34,6 @@ const Navigation: React.FC<NavigationProps> = ({
     { name: 'About', path: '/about' },
     { name: 'Blogs', path: '/blogs' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Speaking', path: '/speaking' },
     { name: 'Uses', path: '/uses' }
   ];
   
