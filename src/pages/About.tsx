@@ -7,28 +7,23 @@ const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
         <div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-8">
-            I'm Spencer Sharp. I live in New York City, where I design the future.
+            I'm Bupal Chowdary. I live in Banglore, where I design the future.
           </h1>
           
           <div className="space-y-6 text-base text-gray-600 dark:text-gray-400">
             <p>
-              I've loved making things for as long as I can remember, and wrote my first program when I
-              was 6 years old, just two weeks after my mom brought home the brand new Macintosh LC 550
-              that I taught myself to type on.
+              Creating has been my lifelong passion, and when I received my first laptop, it opened a world of possibilities that instantly captivated me. I was fascinated by the idea of building something from scratch, and I quickly immersed myself in the world of programming. I realized that I could create anything I could imagine. 
             </p>
             
             <p>
-              The only thing I loved more than computers as a kid was space. When I was 8, I climbed
-              the 40-foot oak tree at the back of our yard while wearing my older sister's motorcycle
-              helmet, counted down from three, and jumped — hoping the tree was tall enough that with
-              just a bit of momentum I'd be able to get to orbit.
+              I am a software engineer with a passion for creating beautiful and functional web applications. I specialize in front-end development, focusing on building responsive and user-friendly interfaces using modern technologies like React, TypeScript, and Tailwind CSS.
             </p>
             
             <p>
-              I spent the next few summers indoors working on a rocket design, while I recovered from
-              the multiple surgeries it took to fix my badly broken legs. It took nine iterations, but
-              when I was 15 I sent my dad's Blackberry into orbit and was able to transmit a photo
-              back down to our family computer from space.
+              Beyond coding, I divide my time between exploring emerging technologies, taking on freelance projects, and unwinding through hikes in the breathtaking landscapes surrounding Bangalore. I'm driven by an insatiable curiosity and commitment to continuous learning, constantly pushing the boundaries of what can be achieved in creating exceptional digital experiences.
+            </p>
+            <p>
+              I am always open to new opportunities and collaborations. If you have an idea or project in mind, feel free to reach out!
             </p>
           </div>
           
