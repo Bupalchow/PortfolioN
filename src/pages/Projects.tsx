@@ -1,29 +1,34 @@
-import React from 'react';
 import { Link } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Planetaria',
-    description: 'Creating technology to empower civilians to explore space on their own terms.',
-    link: 'planetaria.tech',
+    title: 'Level Up Design Studio',
+    description: 'Designed and developed a responsive portfolio website for an interior design studio with experienced architects. Implemented custom image galleries, project showcases, and contact forms using React and Tailwind CSS.',
+    link: 'https://level-up-omega.vercel.app/',
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&h=300&fit=crop'
   },
   {
-    title: 'Animaginary',
-    description: 'High performance web animation library, hand-written in optimized WASM.',
-    link: 'github.com/animaginary',
+    title: 'Medical Analysis',
+    description: 'An AI-driven website that stores and analyzes patient\'s medical reports and provides personalized diet plans, featuring a custom chatbot for user queries. Developed using Nextjs, Typescript, Nodejs, Firebase and Google Gemini API.',
+    link: 'https://medicalanalysis.vercel.app/',
     image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&h=300&fit=crop'
   },
   {
-    title: 'HelioStream',
-    description: 'Real-time video streaming library, optimized for interstellar transmission.',
-    link: 'github.com/heliostream',
+    title: 'Master Anything',
+    description: 'AI-based personalized course generator that builds a course for any given topic. Developed using Reactjs, Javascript, TailwindCSS and Mistral API.',
+    link: 'https://master-anything.vercel.app/',
     image: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=500&h=300&fit=crop'
   },
   {
-    title: 'cosmOS',
-    description: 'The operating system that powers our Planetaria space shuttles.',
-    link: 'github.com/cosmos',
+    title: 'Boardly',
+    description: 'An ed-tech platform offering resources for CBSE board exam preparation. Led the frontend development of the website.',
+    link: 'https://www.boardly.in/',
+    image: 'https://images.unsplash.com/photo-1581822261290-991b38693d1b?w=500&h=300&fit=crop'
+  },
+  {
+    title: 'Transform Journey',
+    description: ' An AI web app that generates 30-day calendar to achieve your goals. It provides daily tasks and motivational quotes to keep you on track. Developed using Reactjs, TailwindCSS, Nodejs and OpenAI API.',
+    link: 'https://tranformation-journy.vercel.app/',
     image: 'https://images.unsplash.com/photo-1581822261290-991b38693d1b?w=500&h=300&fit=crop'
   },
 ];

@@ -32,7 +32,7 @@ const Navigation: React.FC<NavigationProps> = ({
   
   const links = [
     { name: 'About', path: '/about' },
-    { name: 'Articles', path: '/articles' },
+    { name: 'Blogs', path: '/blogs' },
     { name: 'Projects', path: '/projects' },
     { name: 'Speaking', path: '/speaking' },
     { name: 'Uses', path: '/uses' }
