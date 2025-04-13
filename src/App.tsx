@@ -4,7 +4,7 @@ import Layout from './components/Layout';
 import About from './pages/About';
 import Blogs from './pages/Blogs';
 import Projects from './pages/Projects';
-import Timeline from './pages/timeline';
+import Timeline from './pages/Timeline';
 import Hero from './components/Hero'
 import Speaking from './pages/Speaking';
 

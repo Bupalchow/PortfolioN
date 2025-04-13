@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, Twitter, Github, Linkedin } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 const About = () => {
   return (
@@ -30,9 +31,13 @@ const About = () => {
           <div className="mt-12">
             <h2 className="text-2xl font-bold mb-4">Get in touch</h2>
             <div className="flex space-x-6">
-              <SocialLink href="#" icon={<Twitter />} label="Follow on Twitter" />
-              <SocialLink href="#" icon={<Github />} label="Follow on GitHub" />
-              <SocialLink href="#" icon={<Linkedin />} label="Follow on LinkedIn" />
+              <SocialLink icon={<Github size={24} />} href="https://github.com/Bupalchow" label="Follow on GitHub" />
+                      <SocialLink icon={<Linkedin size={24} />} href="https://www.linkedin.com/in/bupal-chowdary-g-590060287/"  label="Follow on LinkedIn" />
+                      <SocialLink 
+                        icon={<FaWhatsapp size={24} />} 
+                        href="https://wa.me/+918951836088?text=Hello%20Bupal%2C%20I%27m%20contacting%20you%20from%20your%20portfolio" 
+                        label="Contact on WhatsApp" 
+                      />
               <SocialLink href="mailto:bupalchowdary06@gmail.com" icon={<Mail />} label="spencer@planetaria.tech" />
             </div>
           </div>
