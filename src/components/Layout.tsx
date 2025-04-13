@@ -51,17 +51,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className={`min-h-screen flex justify-center ${theme === 'dark' ? 'bg-black' : 'bg-gray-50'}`}>
       {/* Center container with white/dark background */}
       <div className="w-full max-w-6xl bg-white dark:bg-[#111111] text-gray-900 dark:text-white transition-colors duration-200">
-        {/* Regular header with logo and theme toggle */}
-        <header className="backdrop-blur-sm transition-all duration-300 relative">
-          <nav className="px-4 sm:px-6 lg:px-8 py-4">
+        {/* Header: sticky on mobile, static on desktop */}
+        <header className="sticky sm:static top-0 z-40 backdrop-blur-sm bg-white/90 dark:bg-[#111111]/90 transition-all duration-300 shadow-sm sm:shadow-none">
+          <nav className="px-4 sm:px-6 lg:px-8 py-2 sm:py-4">
             <div className="flex items-center justify-between">
-              {/* Profile image */}
+              {/* Profile image with responsive size */}
               <div className="flex-shrink-0">
                 <img 
                   src="/Logo.png"
                   alt="Profile"
                   onClick={() => navigate('/')}
-                  className="w-16 h-16 rounded-full cursor-pointer mt-3 ml-4"
+                  className="w-10 h-10 sm:w-16 sm:h-16 rounded-full cursor-pointer mt-1 sm:mt-3 ml-1 sm:ml-4"
                 />
               </div>
 
@@ -72,7 +72,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 </div>
               </div>
 
-              {/* Mobile menu button - positioned with z-index to ensure modal can overlay everything */}
+              {/* Mobile menu button */}
               <div className="sm:hidden z-10 relative">
                 <Navigation headerOnly={true} mobileOnly={true} />
               </div>
@@ -80,17 +80,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               {/* Theme toggle - desktop only */}
               <button 
                 onClick={toggleTheme}
-                className="p-2 rounded-fSDull hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hidden sm:flex"
+                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hidden sm:flex"
                 aria-label="Toggle theme"
               >
-                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {theme === 'dark' ? <Sun className="w-5 h-5 " /> : <Moon className="w-5 h-5" />}
               </button>
             </div>
           </nav>
         </header>
         
-        {/* Sticky dropdown navigation with transition */}
-        <div className={`sticky top-4 z-50 transition-all duration-300 flex justify-end px-4 sm:px-6 lg:px-8 ${
+        {/* Sticky dropdown navigation with transition - desktop only */}
+        <div className={`hidden sm:flex sticky top-4 z-50 transition-all duration-300 justify-end px-4 sm:px-6 lg:px-8 ${
           isScrolled ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-10 pointer-events-none'
         }`}>
           <div className="relative">

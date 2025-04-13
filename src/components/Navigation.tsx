@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { X, Moon, Sun, Menu } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
@@ -16,17 +16,19 @@ const Navigation: React.FC<NavigationProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const dropdownRef = useRef<HTMLDivElement>(null);
   
-  // Prevent scrolling when mobile menu is open
+  // Close dropdown when clicking outside
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-    
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node) && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.body.style.overflow = 'auto';
+      document.addEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen]);
   
@@ -37,11 +39,11 @@ const Navigation: React.FC<NavigationProps> = ({
     { name: 'Blogs', path: '/blogs' },
   ];
   
-  // Mobile navigation toggle
+  // Mobile navigation toggle with dropdown
   if (mobileOnly) {
     return (
-      <>
-        {/* Simple hamburger menu button */}
+      <div className="relative" ref={dropdownRef}>
+        {/* Hamburger menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -50,80 +52,52 @@ const Navigation: React.FC<NavigationProps> = ({
           <Menu className="w-6 h-6 text-gray-700 dark:text-gray-200" />
         </button>
         
-        {/* Mobile menu with improved z-index and solid background */}
-        <div 
-          className={`fixed top-0 left-0 w-screen h-screen z-[9999] transition-all duration-300 ${
-            isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-        >
-          {/* Solid background overlay to prevent text bleed-through */}
-          <div className="absolute inset-0 bg-white dark:bg-black opacity-95"></div>
-          
-          {/* Full width container with higher z-index */}
-          <div className="relative z-[10000] flex flex-col h-full w-full">
-            {/* Header with close button and theme toggle */}
-            <div className="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-800">
-              <h2 className="text-xl font-medium text-gray-900 dark:text-gray-100">Navigation</h2>
-              
-              <div className="flex items-center gap-4">
+        {/* Mobile dropdown menu */}
+        {isOpen && (
+          <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50 animate-fadeIn">
+              <div className="flex items-center gap-2 justify-end p-2">
                 <button 
                   onClick={toggleTheme}
-                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                   aria-label="Toggle theme"
                 >
                   {theme === 'dark' ? 
-                    <Sun className="w-5 h-5 text-amber-400" /> : 
-                    <Moon className="w-5 h-5 text-gray-700" />
+                    <Sun className="w-4 h-4" /> : 
+                    <Moon className="w-4 h-4 text-gray-700" />
                   }
                 </button>
-                
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-                  aria-label="Close menu"
+                  className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                 >
-                  <X className="h-5 w-5 text-gray-800 dark:text-white" />
+                  <X className="h-4 w-4" />
                 </button>
-              </div>
             </div>
             
-            {/* Navigation links with improved visibility */}
-            <div className="flex flex-col flex-1 justify-center px-6 py-8 w-full bg-white dark:bg-black">
-              <nav className="w-full">
-                <ul className="space-y-4 w-full">
-                  {links.map((link) => (
-                    <li key={link.name} className="w-full">
-                      <NavLink
-                        to={link.path}
-                        onClick={() => setIsOpen(false)}
-                        className={({ isActive }) => 
-                          `block py-4 px-4 rounded-lg text-center text-xl font-medium transition-all w-full ${
-                            isActive
-                              ? 'bg-teal-50 text-teal-700 dark:bg-gray-800 dark:text-teal-400'
-                              : 'text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'
-                          }`
-                        }
-                      >
-                        {link.name}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
-            
-            {/* Footer */}
-            <div className="p-6 border-t border-gray-200 dark:border-gray-800 w-full bg-white dark:bg-black">
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="w-full py-3 px-4 bg-gray-100 dark:bg-gray-800 rounded-lg text-center text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              >
-                Close
-              </button>
-            </div>
+            <nav className="p-2">
+              <ul className="space-y-1">
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <NavLink
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={({ isActive }) => 
+                        `flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all ${
+                          isActive
+                            ? 'bg-teal-50 text-teal-700 dark:bg-gray-700 dark:text-teal-400'
+                            : 'text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+                        }`
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
-        </div>
-      </>
+        )}
+      </div>
     );
   }
 

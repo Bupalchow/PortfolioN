@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { HashRouter, Routes, Route} from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Layout from './components/Layout';
 import About from './pages/About';
@@ -10,7 +10,7 @@ import Speaking from './pages/Speaking';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider>
         <Layout>
           <Routes>
@@ -23,7 +23,7 @@ function App() {
           </Routes>
         </Layout>
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
