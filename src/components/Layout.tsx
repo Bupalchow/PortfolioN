@@ -15,10 +15,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Links data - keep this in sync with Navigation component
   const links = [
     { name: 'About', path: '/about' },
-    { name: 'Blogs', path: '/blogs' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Speaking', path: '/speaking' },
-    { name: 'Uses', path: '/uses' }
+    // { name: 'Speaking', path: '/speaking' },
+    { name: 'Timeline', path: '/timeline' },
+    { name: 'Blogs', path: '/blogs' }
   ];
 
   // Track scroll position

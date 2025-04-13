@@ -32,9 +32,9 @@ const Navigation: React.FC<NavigationProps> = ({
   
   const links = [
     { name: 'About', path: '/about' },
-    { name: 'Blogs', path: '/blogs' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Uses', path: '/uses' }
+    { name: 'Timeline', path: '/timeline' },
+    { name: 'Blogs', path: '/blogs' },
   ];
   
   // Mobile navigation toggle

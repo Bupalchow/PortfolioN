@@ -4,8 +4,9 @@ import Layout from './components/Layout';
 import About from './pages/About';
 import Blogs from './pages/Blogs';
 import Projects from './pages/Projects';
-import Uses from './pages/Uses';
+import Timeline from './pages/timeline';
 import Hero from './components/Hero'
+import Speaking from './pages/Speaking';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/uses" element={<Uses />} />
+            <Route path="/speaking" element={<Speaking />} />
+            <Route path="/timeline" element={<Timeline />} />
           </Routes>
         </Layout>
       </ThemeProvider>
