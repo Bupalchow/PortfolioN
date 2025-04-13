@@ -33,7 +33,7 @@ const About = () => {
               <SocialLink href="#" icon={<Twitter />} label="Follow on Twitter" />
               <SocialLink href="#" icon={<Github />} label="Follow on GitHub" />
               <SocialLink href="#" icon={<Linkedin />} label="Follow on LinkedIn" />
-              <SocialLink href="mailto:spencer@planetaria.tech" icon={<Mail />} label="spencer@planetaria.tech" />
+              <SocialLink href="mailto:bupalchowdary06@gmail.com" icon={<Mail />} label="spencer@planetaria.tech" />
             </div>
           </div>
         </div>

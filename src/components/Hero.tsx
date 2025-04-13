@@ -1,5 +1,6 @@
 import React from 'react';
-import { Instagram, Github, Linkedin} from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
+import {  Github, Linkedin} from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -12,9 +13,13 @@ const Hero = () => {
         I'm Bupal Chowdary, a dedicated Software Developer focused on crafting high-quality, user-centric web applications using modern front-end technologies like React and Tailwind CSS. With a proven track record of delivering innovative solutions for design studios, ed-tech platforms, and AI-powered projects, I build responsive and engaging digital experiences that drive success and instill trust.
       </p>
       <div className="flex space-x-6">
-        <SocialLink icon={<Github />} href="https://github.com/Bupalchow" label="Follow on GitHub" />
-        <SocialLink icon={<Linkedin />} href="https://www.linkedin.com/in/bupal-chowdary-g-590060287/"  label="Follow on LinkedIn" />
-        <SocialLink icon={<Instagram />} href="" label="Follow on Instagram" />
+        <SocialLink icon={<Github size={24} />} href="https://github.com/Bupalchow" label="Follow on GitHub" />
+        <SocialLink icon={<Linkedin size={24} />} href="https://www.linkedin.com/in/bupal-chowdary-g-590060287/"  label="Follow on LinkedIn" />
+        <SocialLink 
+          icon={<FaWhatsapp size={24} />} 
+          href="https://wa.me/+918951836088?text=Hello%20Bupal%2C%20I%27m%20contacting%20you%20from%20your%20portfolio" 
+          label="Contact on WhatsApp" 
+        />
       </div>
     </section>
   );

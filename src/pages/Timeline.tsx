@@ -32,11 +32,25 @@ const timelineData: TimelineItem[] = [
     category: 'achievement'
   },
   {
+    date: 'feb 2024',
+    title: 'The Realm of IOT applications and beyond',
+    description: 'completed 3 days Value Added Course on “The Realm of IOT applications and beyond” from 7th Feb to 9th Feb 2024 organized by Department of Electronics and Communication Engineering in association with Robo RAM',
+    icon: <Calendar className="h-5 w-5" />,
+    category: 'event'
+  },
+  {
     date: 'Nov 2023',
     title: 'Unfold 2023',
     description: 'Participted in my second hackathon and developed an web3 based event organization application',
     icon: <Calendar className="h-5 w-5" />,
     category: 'event'
+  },
+  {
+    date: 'sept 2023',
+    title: 'Event Check-in Coordinator',
+    description: 'Served as the event check-in coordinator during the Flow Hackathon organized by WEB3FORALL during my internship. ',
+    icon: <Briefcase className="h-5 w-5" />,
+    category: 'work'
   },
   {
     date: 'Aug 2023- Nov 2023',
