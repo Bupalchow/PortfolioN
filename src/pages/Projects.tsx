@@ -13,7 +13,7 @@ const projects: Project[] = [
   {
     title: 'Level Up Design Studio',
     description: 'Designed and developed a responsive portfolio website for an interior design studio with experienced architects. Implemented custom image galleries, project showcases, and contact forms.',
-    link: 'level-up-omega.vercel.app/',
+    link: 'https://www.lvlupdesignstudio.com/',
     image: '/lvlup.png',
     category: 'freelance',
     tags: ['React', 'Tailwind CSS', 'Responsive Design', 'Frontend', 'UI/UX']
