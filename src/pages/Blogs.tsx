@@ -53,7 +53,7 @@ const CodeBlock = ({ code }: { code: string }) => {
       // Comments
       .replace(
         /\/\/(.*)/g,
-        '<span style="color: #7f848e;">//\$1</span>'
+        '<span style="color: #7f848e;">//$1</span>'
       )
       // Numbers
       .replace(
@@ -665,7 +665,7 @@ const Blogs = () => {
                 />
 
                 {/* Add CSS for code blocks */}
-                <style jsx global>{`
+                <style>{`
                   /* VS Code-inspired code block styles */
                   pre {
                     background-color: #282c34;
