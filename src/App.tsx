@@ -7,6 +7,7 @@ import Projects from './pages/Projects';
 import Timeline from './pages/Timeline';
 import Hero from './components/Hero'
 import Speaking from './pages/Speaking';
+import FloatingDownloadButton from './components/FloatingDownloadButton'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/timeline" element={<Timeline />} />
           </Routes>
         </Layout>
+        <FloatingDownloadButton />
       </ThemeProvider>
     </HashRouter>
   );
