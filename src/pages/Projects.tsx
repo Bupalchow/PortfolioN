@@ -1,62 +1,5 @@
 import { Link, ArrowRight } from 'lucide-react';
-
-type Project = {
-  title: string;
-  description: string;
-  link: string;
-  image: string;
-  category: 'freelance' | 'academic' | 'personal';
-  tags: string[];
-};
-
-const projects: Project[] = [
-  {
-    title: 'Level Up Design Studio',
-    description: 'Designed and developed a responsive portfolio website for an interior design studio with experienced architects. Implemented custom image galleries, project showcases, and contact forms.',
-    link: 'https://www.lvlupdesignstudio.com/',
-    image: '/lvlup.png',
-    category: 'freelance',
-    tags: ['React', 'Tailwind CSS', 'Responsive Design', 'Frontend', 'UI/UX']
-  },
-  {
-    title: 'Medical Analysis',
-    description: 'An AI-driven website that stores and analyzes patient\'s medical reports and provides personalized diet plans, featuring a custom chatbot for user queries.',
-    link: 'medicalanalysis.vercel.app/',
-    image: '/medical.png',
-    category: 'academic',
-    tags: ['Next.js', 'TypeScript', 'Node.js', 'Firebase', 'Google Gemini API', 'AI']
-  },
-  {
-    title: 'Master Anything',
-    description: 'AI-based personalized course generator that builds a course for any given topic.',
-    link: 'master-anything.vercel.app/',
-    image: '/Master.png',
-    category: 'personal',
-    tags: ['React', 'JavaScript', 'Tailwind CSS', 'Mistral API', 'AI','Shadcn UI']
-  },
-  {
-    title: 'Boardly',
-    description: 'An ed-tech platform offering resources for CBSE board exam preparation. Led the frontend development of the website.',
-    link: 'www.boardly.in/',
-    image: '/boardly.png',
-    category: 'freelance',
-    tags: ['React','Tailwind CSS','Javascript','Frontend', 'UI/UX']
-  },
-  {
-    title: 'Transform Journey',
-    description: 'An AI web app that generates 30-day calendar to achieve your goals. It provides daily tasks and motivational quotes to keep you on track.',
-    link: 'tranformation-journy.vercel.app/',
-    image: '/transform.png',
-    category: 'personal',
-    tags: ['React', 'Tailwind CSS', 'Node.js', 'Gemini API', 'AI']
-  },
-];
-
-const categoryColors = {
-  freelance: 'text-blue-600 dark:text-blue-400 border-blue-300 dark:border-blue-500/30',
-  academic: 'text-purple-600 dark:text-purple-400 border-purple-300 dark:border-purple-500/30',
-  personal: 'text-green-600 dark:text-green-400 border-green-300 dark:border-green-500/30'
-};
+import { projects, categoryColors, getProjectUrl, type ProjectCategory } from '../data/projects';
 
 const Projects = () => {
   return (
@@ -86,11 +29,11 @@ const ProjectCard = ({ title, description, link, image, tags, category }: {
   link: string;
   image: string;
   tags: string[];
-  category: 'freelance' | 'academic' | 'personal';
+  category: ProjectCategory;
 }) => {
   return (
     <div className="group relative flex flex-col items-start">
-      <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+      <div className="relative w-full aspect-video overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
         <img
           src={image}
           alt={title}
@@ -121,7 +64,7 @@ const ProjectCard = ({ title, description, link, image, tags, category }: {
       </div>
       
       <a
-        href={`https://${link}`}
+        href={getProjectUrl(link)}
         target='_blank'
         className="mt-5 inline-flex items-center text-teal-500 dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 font-medium text-sm transition-colors group/link"
       >
