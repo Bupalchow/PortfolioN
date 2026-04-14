@@ -11,6 +11,20 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
+    date: 'Sept 2025 - Mar 2026',
+    title: 'Software Engineer at eekee AI',
+    description: 'Worked as part of a cross-functional team and contributed around 70% of the web and mobile product features, delivering functionality for burnout prevention, guided conversations, and employee well-being insights.',
+    icon: <Briefcase className="h-5 w-5" />,
+    category: 'work'
+  },
+  {
+    date: 'Jun 2025 - Aug 2025',
+    title: 'Freelancer @ Nemaly',
+    description: 'one of the founding developer workiing on the startup planning to digitialize legal docuements with AI and blockchain technology.',
+    icon: <Briefcase className="h-5 w-5" />,
+    category: 'work'
+  },
+  {
     date: 'Mar 2025 - May 2025',
     title: 'Freelancer',
     description: 'Developing Level Up design Studio\'s  portfolio website to establish a strong online presence. ',
@@ -104,6 +118,7 @@ const Timeline = () => {
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.log('Error submitting form:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -127,7 +142,7 @@ const Timeline = () => {
       
       <div className="relative">
         {/* Vertical line */}
-        <div className="absolute left-5 sm:left-1/2 h-full w-0.5 bg-gradient-to-b from-teal-400 via-teal-500 to-gray-200 dark:to-gray-800 transform -translate-x-1/2"></div>
+        <div className="absolute left-5 sm:left-1/2 h-full w-0.5 bg-linear-to-b from-teal-400 via-teal-500 to-gray-200 dark:to-gray-800 transform -translate-x-1/2"></div>
         
         {/* Timeline items */}
         <div className="space-y-12">
@@ -143,7 +158,7 @@ const Timeline = () => {
               <div className="group relative">
                 <div className="absolute -inset-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
-                <div className="relative bg-white dark:bg-gray-800 p-5 rounded-lg border  dark:border-gray-700 shadow-sm border-teal-200 dark:border-teal-800/30">
+                <div className="relative bg-white dark:bg-gray-800 p-5 rounded-lg border  dark:border-gray-700 shadow-sm border-teal-200">
                   <div className="flex items-center gap-2 mb-3 text-sm text-gray-500 dark:text-gray-400">
                     <Calendar className="h-4 w-4" />
                     <span className="text-teal-600 dark:text-teal-400 font-medium">Future</span>

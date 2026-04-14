@@ -1,4 +1,4 @@
-export type ProjectCategory = 'freelance' | 'academic' | 'personal';
+export type ProjectCategory = 'freelance' | 'academic' | 'personal' | 'full time';
 
 export type Project = {
   title: string;
@@ -10,6 +10,15 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title:'eekee AI',
+    description:
+    'Contributed as part of the core team to build an AI-led employee well-being platform, implementing around 70% of the product features across both web and mobile experiences, including burnout detection, guided conversations, and routine-based support.',
+    link:'eekee.ai',
+    image:'/eekee_black.jpg',
+    category:'full time',
+    tags:['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'AI'],
+  },
   {
     title: 'Level Up Design Studio',
     description:
@@ -56,6 +65,7 @@ export const projects: Project[] = [
 ];
 
 export const categoryColors: Record<ProjectCategory, string> = {
+  'full time': 'text-indigo-600 dark:text-indigo-400 border-indigo-300 dark:border-indigo-500/30',
   freelance: 'text-blue-600 dark:text-blue-400 border-blue-300 dark:border-blue-500/30',
   academic: 'text-purple-600 dark:text-purple-400 border-purple-300 dark:border-purple-500/30',
   personal: 'text-green-600 dark:text-green-400 border-green-300 dark:border-green-500/30',
